@@ -11,6 +11,7 @@
             box-sizing: border-box;
         }
         .head{
+            align-items: center;
             display: flex;
         }
         img{
@@ -20,14 +21,68 @@
         
         .head ul{
             display: flex;
-            color: rgb(19, 13, 10);
+            color: rgb(26, 20, 16);
             width: 300;
             align-items: center;
             list-style-type: none;
         }
+        .h{
+            text-align: center;
+        }
+        
+        .parag{
+                position: relative;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+                text-size-adjust: 20;
+        }
+        .parag:after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                height: 4px;
+                width: 200px;
+                border-radius: 2px;
+                background-color: #2db5f5;
+            }
         .signin{
             align-items: center;
+            
+            
         }
+        .signbox{
+                max-width: 450px;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 0px 19px 5px rgba(0,0, 0, 0.19);
+                margin-left: 300px;
+                margin-top: 100px;
+            }
+        .inbox{
+                align-items: center;
+                padding: 25px 40px;
+            }
+            .btn{
+                width: 100%;
+                padding: 9px 25px;
+                font-size: 1.1rem;
+                background-color: #2f8fbb;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                color: #fff;
+                transition: .3s;
+
+            }
+            .btn:hover{
+                background-color: #202629
+
+            }
         input[type="email"],input[type="password"]{
         width: 300;
         height: 40px;
@@ -46,39 +101,26 @@
             border-radius: 5px;
             font-size: 1.3em;
         }
+        video{
+            align-items: center;
+            margin-left: 300px;
+            
+        }
         .head li {
         margin: 10px;
         }
         video{
             box-shadow: 2px 3px 30px dodgerblue;
         }
+        .jum{
+            margin-bottom: 100px;
+        }
     </style>
     <script>
-        function onFo(e){
-            e.style.background="#C0C0C0";
+        function myFunction() {
+          alert("The video was paused. To continue touch the play sign ");
         }
-        function onbl(e){
-            e.style.background="#ffffff";
-        }
-        document.addEventListener("DOMContentLoaded",()=>{
-        var form=document.getElementById("my_form");
-        form.addEventListener('submit',function(e){
-        e.preventDefault();
-        var username=document.getElementById("email").value;
-        var password=document.getElementById("pas").value;
-        alert(username);
-        alert(password);
-    })
-        })
-        var video = document.getElementById( 'video' ),
-    pausedtime = 0;
-    function jump(){
-    pausedtime += 5;
-    video.currentTime = pausedtime;
-    video.play()
-    }
-        
-    </script>
+        </script>
 </head>
 <body>
     <div class="head">
@@ -87,28 +129,45 @@
         <ul>
             <li>Home</li>
             <li>Register</li>
+            <li>application</li>
             <li>Contact us</li>
         </ul>
     </nav>
     </div>
     <hr size 3px black>
     <div class="signin">
-        <h2>
-            Signin
+        <h2 class="h">
+            SIGN IN
         </h2>
-        <p>Signin and get full acess to our resource</p>
-            <form  id="my_form" method="get">
-            <label for="Username">Username</label>
-            <input type="email" name="Username" id="email" onfocus="onFo(this)"  onblur="onbl(this)" placeholder="Email"  required><br><br>
-            <label for="passwd">Password</label>
-            <input type="password" name="passwd" id="pas" onfocus="onFo(this)" onblur="onbl(this)" placeholder="password" min=8 required><br><br>
-            <input type="submit" name="submit" id="signin" placeholder="Signin">
-        </form> 
+        
+        <h3 class="parag">Signin and get full acess to our resource</h3>
+        
+        <div class="signbox">
+            <div class="inbox">
+                <form  id="my_form" method="get">
+                    <label for="Username">Name</label>
+                    <input type="email" name="Username" id="email" onfocus="onFo(this)"  onblur="onbl(this)" placeholder="Email"  required><br><br>
+                    <label for="passwd">Password</label>
+                    <input type="password" name="passwd" id="pas" onfocus="onFo(this)" onblur="onbl(this)" placeholder="password" min=8 required><br><br>
+                    <button class="btn">Submit</button>
+                  
+                </form> 
+            </div>
+            
+        </div>
+            
     </div>
     <br><br>
-    <div>
-        <video id="video" src="30 Second Explainer Videos.mp4" width=250px height=200px controls autoplay></video>
-        <button type="button" onclick="jump()">Jump</button>
+    <div class="video1">
+        <video width="320" height="240" controls onpause="myFunction()">
+            <source src="24_HOURS.mp4" type="video/mp4">
+            <source src="24_HOURS.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
+          
+        
+        
     </div>
+
 </body>
 </html>
