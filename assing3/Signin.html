@@ -83,7 +83,7 @@
                 background-color: #202629
 
             }
-        input[type="email"],input[type="password"]{
+        input[type="text"],input[type="email"],input[type="password"]{
         width: 300;
         height: 40px;
         border-radius: 5px;
@@ -93,28 +93,22 @@
             float: right;
             margin-left: 50%;
         }
-        input[type="submit"]{
-            width: 200px;
-            background-color: rgb(238, 255, 0);
-            color: black;
-            height: 40px;
-            border-radius: 5px;
-            font-size: 1.3em;
+ 
         }
-        video{
+        video1{
             align-items: center;
             margin-left: 300px;
-            
+            margin-top: 100px;
+            margin-bottom: 50px;
         }
         .head li {
         margin: 10px;
         }
         video{
             box-shadow: 2px 3px 30px dodgerblue;
+            
         }
-        .jum{
-            margin-bottom: 100px;
-        }
+        
     </style>
     <script>
         function myFunction() {
@@ -146,6 +140,8 @@
             <div class="inbox">
                 <form  id="my_form" method="get">
                     <label for="Username">Name</label>
+                    <input type="text" name="Username" id="name" onfocus="onFo(this)"  onblur="onbl(this)" placeholder="Username"  required><br><br>
+                    <label for="Username">Email</label>
                     <input type="email" name="Username" id="email" onfocus="onFo(this)"  onblur="onbl(this)" placeholder="Email"  required><br><br>
                     <label for="passwd">Password</label>
                     <input type="password" name="passwd" id="pas" onfocus="onFo(this)" onblur="onbl(this)" placeholder="password" min=8 required><br><br>
