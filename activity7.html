@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        body {
+            background-color: rgb(248, 246, 244);
+        }
+
+        #formm {
+            width: 40%;
+            position: absolute;
+            align-items: center;
+            padding: 25px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        #formm * {
+            margin: 8px 0px;
+        }
+
+        #formm input {
+            width: 50%;
+            padding: 7px;
+        }
+
+        #formm input[type="color"] {
+            width: 10%;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="formm">
+        <form>
+            <label>
+                Name:<br>
+                <input type="text" name="name" id="nam">
+            </label><br />
+            <label>
+                Email:<br>
+                <input type="email" name="email" id="eml">
+
+            </label><br />
+            <label>
+                Phone Number:<br>
+                <input type="tel" name="phone number" id="phone">
+            </label><br />
+            <label>
+                Favorite:
+                <input type="color" name="color" id="clr">
+            </label><br />
+            <label>
+                Password:
+                <input type="password" name="password" id="pwd">
+            </label><br />
+            <button id="btn" onclick="showAlert() ">Submit</button>
+        </form>
+
+    </div>
+    <script>
+        let add = document.getElementById("btn");
+        let personName = document.getElementById('nam');
+        let personEmail = document.getElementById('eml');
+        let personPhone = document.getElementById('phone');
+        let personColor = document.getElementById('clr');
+        let personPwd = document.getElementById('pwd');
+
+     
+
+        function showAlert() {
+            let person = {
+            name: personName.value,
+            Email: personEmail.value,
+            phone: personPhone.value,
+            color: personColor.value,
+            password: personPwd.value
+
+        };
+            alert("Name: "+
+                person.name+"\n"+
+                "Email: "+
+                person.Email +"\n"+
+                "Phone: "+
+                person.phone+"\n"+
+                "Color: "+
+                person.color+"\n"+
+                "Password: "+
+                person.password+"\n"
+                );
+        }
+    </script>
+</body>
+
+</html>
